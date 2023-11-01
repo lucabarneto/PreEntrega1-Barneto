@@ -1,0 +1,89 @@
+/**********Generales**********/
+
+html {
+  box-sizing: border-box;
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  font-family: sans-serif;
+}
+
+a:link,
+a:visited,
+a:active {
+  color: white;
+  text-decoration: none;
+}
+
+/**********NavBar**********/
+
+.navbar {
+  background-color: #7345a1;
+  color: white;
+  height: 80px;
+  padding: 0 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar ul li {
+  width: 220px;
+  height: 48px;
+  padding: 16px 32px;
+  margin-right: 16px;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.navbar ul li:hover {
+  background-color: #57c79e;
+  font-weight: 700;
+}
+
+.navbar ul li:hover a {
+  color: #141414;
+}
+
+/**********CartWidget**********/
+
+.cart-container {
+  height: 64px;
+  width: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 64px;
+  text-align: center;
+}
+
+.cart-container:hover {
+  background-color: #503071;
+  cursor: pointer;
+}
+
+.bi-cart-fill {
+  font-size: 24px;
+}
+
+/**********ItemlistContainer**********/
+
+main {
+  padding: 48px 80px;
+}
