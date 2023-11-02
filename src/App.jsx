@@ -1,5 +1,6 @@
 import React from "react";
 import "./App.css";
+import "bootstrap-icons/font/bootstrap-icons.css";
 import { NavBar } from "./components/NavBar";
 import { ItemListContainer } from "./components/ItemListContainer";
 function App() {
