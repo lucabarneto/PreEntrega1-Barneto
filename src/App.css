@@ -53,7 +53,7 @@ a:active {
 }
 
 .navbar ul li:hover {
-  background-color: #57c79e;
+  background: linear-gradient();
   font-weight: 700;
 }
 
@@ -86,4 +86,17 @@ a:active {
 
 main {
   padding: 48px 80px;
+}
+
+/**********ItemCount**********/
+
+.item-count {
+  height: 48px;
+  width: 220px;
+  padding: 0 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: thin solid #57c79e;
+  border-radius: 8px;
 }
