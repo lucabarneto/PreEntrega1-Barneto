@@ -23,6 +23,15 @@ a:active {
   text-decoration: none;
 }
 
+h1 {
+  font-size: 38px;
+  margin: 0 0 32px;
+}
+
+p {
+  margin: 0;
+}
+
 /**********NavBar**********/
 
 .navbar {
@@ -101,6 +110,20 @@ section {
   border-radius: 8px;
 }
 
+.item-count button {
+  text-decoration: none;
+  border: none;
+  background: none;
+  color: #57c79e;
+  font-size: 21px;
+  font-weight: 700;
+}
+
+.item-count button:hover {
+  color: #29947a;
+  cursor: pointer;
+}
+
 /**********Item**********/
 
 .item {
@@ -116,7 +139,7 @@ section {
   height: 216px;
 }
 
-.item-details {
+.item-info {
   width: 240px;
   padding: 16px;
   text-align: center;
@@ -126,14 +149,14 @@ section {
   font-size: 18px;
 }
 
-.item-details > div {
+.item-info > div {
   margin: 8px 0 16px 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.item-details button {
+.item-info button {
   border: thin solid #57c79e;
   border-radius: 8px;
   color: #57c79e;
@@ -143,7 +166,7 @@ section {
   height: 40px;
 }
 
-.item-details button:hover {
+.item-info button:hover {
   border: none;
   background-color: #57c79e;
   color: white;
@@ -165,4 +188,68 @@ section {
   /* Grid 3x? */
   grid-template-columns: repeat(3, 1fr);
   justify-items: center;
+}
+
+/**********ItemDetails**********/
+
+.item-details {
+  width: 80%;
+  margin: 48px auto;
+  display: flex;
+}
+
+.item-details img {
+  width: 33%;
+  height: auto;
+}
+
+.item-details > div {
+  padding: 0 40px;
+}
+
+.item-details__header {
+  margin-bottom: 40px;
+}
+
+.item-details__header > div {
+  font-size: 28px;
+  font-weight: 500;
+}
+
+.item-details > div > div:nth-child(2) {
+  margin-bottom: 40px;
+}
+
+.item-details__buttons {
+  display: flex;
+}
+
+.item-details__buttons > button {
+  margin-left: 24px;
+  border-radius: 8px;
+  color: #57c79e;
+  font-weight: 700;
+  text-decoration: none;
+  height: 40px;
+  width: 220px;
+  border: none;
+  background-color: #57c79e;
+  color: white;
+}
+
+.item-details__buttons > button:hover {
+  background-color: #29947a;
+  cursor: pointer;
+}
+
+.item-details__buttons > div {
+  text-align: center;
+}
+
+.item-details__buttons > div > div {
+  margin-bottom: 8px;
+}
+
+.item-details__buttons > div > span {
+  color: #757575;
 }

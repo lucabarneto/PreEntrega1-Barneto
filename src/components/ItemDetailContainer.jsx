@@ -39,6 +39,8 @@ const ItemDetailContainer = () => {
       description={item.description}
       title={item.title}
       pictureUrl={item.pictureUrl}
+      price={item.price}
+      quantity={item.quantity}
     />
   ) : (
     <h3>Loading...</h3>
