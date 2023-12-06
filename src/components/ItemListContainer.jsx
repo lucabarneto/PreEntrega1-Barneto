@@ -1,10 +1,14 @@
 import { useState, useEffect } from "react";
-import ItemCount from "./ItemCount";
 import ItemList from "./ItemList";
 import "../App.css";
 import { useParams } from "react-router-dom";
-
-import data from "../data/data";
+import {
+  getFirestore,
+  collection,
+  getDocs,
+  query,
+  where,
+} from "firebase/firestore";
 
 export const ItemListContainer = () => {
   const [items, setItems] = useState([]);
@@ -12,17 +16,20 @@ export const ItemListContainer = () => {
   const { id } = useParams();
 
   useEffect(() => {
-    const getData = new Promise((resolve, reject) => {
-      setTimeout(() => {
-        resolve(data);
-      }, 2000);
-    });
-    getData.then((res) => {
-      if (!id) {
-        setItems(res);
+    const db = getFirestore(),
+      refCollection = !id
+        ? collection(db, "items")
+        : query(collection(db, "items"), where("category", "==", id));
+
+    getDocs(refCollection).then((res) => {
+      if (res.size === 0) {
+        console.log("La colección no presenta documentos");
       } else {
-        const filterByType = res.filter((el) => el.type === id);
-        setItems(filterByType);
+        setItems(
+          res.docs.map((doc) => {
+            return { id: doc.id, ...doc.data() };
+          })
+        );
       }
     });
   }, [id]);
