@@ -1,6 +1,24 @@
 import ItemCount from "./ItemCount";
+import { CartContext } from "../contexts/CartContext";
+import { useContext } from "react";
 
-const ItemDetails = ({ title, pictureUrl, description, price, quantity }) => {
+const ItemDetails = ({
+  id,
+  title,
+  pictureUrl,
+  description,
+  price,
+  quantity,
+}) => {
+  const { handleItem } = useContext(CartContext);
+
+  const item = {
+    title,
+    price,
+    quantity,
+    id,
+  };
+
   return (
     <>
       <article className="item-details">
@@ -26,10 +44,16 @@ const ItemDetails = ({ title, pictureUrl, description, price, quantity }) => {
           </div>
           <div className="item-details__buttons">
             <div>
-              <ItemCount />
+              <ItemCount quantity={quantity} />
               <span>{quantity} cuadros disponibles</span>
             </div>
-            <button>Agregar al carrito</button>
+            <button
+              onClick={() => {
+                handleItem(item);
+              }}
+            >
+              Agregar al carrito
+            </button>
           </div>
         </div>
       </article>

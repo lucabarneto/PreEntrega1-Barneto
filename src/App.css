@@ -124,6 +124,11 @@ section {
   cursor: pointer;
 }
 
+.item-count span {
+  color: #57c79e;
+  font-weight: 700;
+}
+
 /**********Item**********/
 
 .item {

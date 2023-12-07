@@ -36,6 +36,7 @@ const ItemDetailContainer = () => {
 
   return item ? (
     <ItemDetails
+      id={item.id}
       description={item.description}
       title={item.title}
       pictureUrl={item.pictureUrl}
