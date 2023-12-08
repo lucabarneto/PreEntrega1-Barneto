@@ -13,7 +13,7 @@ const CartItem = ({ pictureUrl, description, title, price, id }) => {
           <div className="cart-item-price">${price}</div>
         </div>
       </div>
-      <button onClick={() => removeItem(id)}>Eliminar del carrito</button>
+      <button onClick={() => removeItem(id)}>Eliminar</button>
     </article>
   );
 };

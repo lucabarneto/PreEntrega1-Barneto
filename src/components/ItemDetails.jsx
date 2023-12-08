@@ -47,7 +47,7 @@ const ItemDetails = ({
           </div>
           <div className="item-details__buttons">
             <div>
-              <ItemCount quantity={quantity} />
+              <ItemCount top={quantity} />
               <span>{quantity} cuadros disponibles</span>
             </div>
             <button
