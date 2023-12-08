@@ -83,6 +83,18 @@ p {
   cursor: pointer;
 }
 
+.cart-container div {
+  padding: 1px;
+  height: 18px;
+  width: 18px;
+  background-color: #57c79e;
+  border-radius: 18px;
+  font-weight: 700;
+  position: absolute;
+  right: 92px;
+  top: 20px;
+}
+
 .bi-cart-fill {
   font-size: 24px;
 }

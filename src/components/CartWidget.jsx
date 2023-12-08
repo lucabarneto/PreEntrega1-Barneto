@@ -1,11 +1,11 @@
 import { Link } from "react-router-dom";
 
-export const CartWidget = () => {
+export const CartWidget = ({ number }) => {
   return (
     <div className="cart-container">
       <Link to={"/cart"}>
+        {number !== 0 && <div>{number}</div>}
         <i className="bi bi-cart-fill"></i>
-        <p>1</p>
       </Link>
     </div>
   );

@@ -11,7 +11,7 @@ const ItemDetails = ({
   price,
   quantity,
 }) => {
-  const { handleItem } = useContext(CartContext);
+  const { handleItem, handleCartNumber } = useContext(CartContext);
 
   const item = {
     title,
@@ -53,6 +53,7 @@ const ItemDetails = ({
             <button
               onClick={() => {
                 handleItem(item);
+                handleCartNumber();
               }}
             >
               Agregar al carrito

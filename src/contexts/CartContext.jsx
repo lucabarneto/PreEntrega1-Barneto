@@ -13,7 +13,8 @@ const initialBuyers = {
 const CartProvider = ({ children }) => {
   // const { items, setItems } = useState([]);
   const [items, setItems] = useState([]),
-    [buyers, setBuyers] = useState(initialBuyers);
+    [buyers, setBuyers] = useState(initialBuyers),
+    [cartNumber, setCartNumber] = useState(0);
 
   const handleItem = (item) => {
     setItems((prev) => {
@@ -30,11 +31,17 @@ const CartProvider = ({ children }) => {
     });
   };
 
-  const clearAll = () => setItems([]);
+  const handleCartNumber = () => setCartNumber(cartNumber + 1);
+
+  const clearAll = () => {
+    setItems([]);
+    setCartNumber(0);
+  };
 
   const removeItem = (id) => {
     let filterById = items.filter((item) => item.id !== id);
     setItems(filterById);
+    setCartNumber(cartNumber - 1);
   };
 
   const finalPrice = (items) => {
@@ -70,8 +77,10 @@ const CartProvider = ({ children }) => {
   const globalVars = {
     items,
     buyers,
+    cartNumber,
     handleItem,
     handleBuyer,
+    handleCartNumber,
     clearAll,
     removeItem,
     finalPrice,
