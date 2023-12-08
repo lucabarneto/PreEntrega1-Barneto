@@ -16,10 +16,9 @@ const CartProvider = ({ children }) => {
 
   const clearAll = () => setItems([]);
 
-  const removeItem = (item) => {
-    items.some((el) => el.id == item.id)
-      ? items.splice(items.indexOf(item), 1)
-      : "El item no se encuentra en la cart";
+  const removeItem = (id) => {
+    let filterById = items.filter((item) => item.id !== id);
+    setItems(filterById);
   };
 
   const globalVars = { items, handleItem, clearAll, removeItem };

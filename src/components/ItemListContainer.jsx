@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import ItemList from "./ItemList";
-import "../App.css";
 import { useParams } from "react-router-dom";
 import {
   getFirestore,

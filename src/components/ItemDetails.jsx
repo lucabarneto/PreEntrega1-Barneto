@@ -1,4 +1,5 @@
 import ItemCount from "./ItemCount";
+import { NavLink } from "react-router-dom";
 import { CartContext } from "../contexts/CartContext";
 import { useContext } from "react";
 
@@ -17,6 +18,8 @@ const ItemDetails = ({
     price,
     quantity,
     id,
+    pictureUrl,
+    description,
   };
 
   return (

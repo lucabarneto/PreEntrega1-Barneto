@@ -1,12 +1,11 @@
-import Item from "./Item";
+import CartItem from "./CartItem";
 
-const ItemList = ({ items }) => {
+const CartItemList = ({ items }) => {
   return items.map((item) => (
-    <Item
+    <CartItem
       key={item.id}
       id={item.id}
       title={item.title}
-      quantity={item.quantity}
       price={item.price}
       pictureUrl={item.pictureUrl}
       description={item.description}
@@ -14,4 +13,4 @@ const ItemList = ({ items }) => {
   ));
 };
 
-export default ItemList;
+export default CartItemList;
