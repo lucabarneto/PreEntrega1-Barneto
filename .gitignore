@@ -24,5 +24,4 @@ dist-ssr
 *.sln
 *.sw?
 
-src/data/data.js
 teoria-firebase.js
