@@ -9,6 +9,7 @@ const CartItemList = ({ items }) => {
       price={item.price}
       pictureUrl={item.pictureUrl}
       description={item.description}
+      count={item.count}
     />
   ));
 };

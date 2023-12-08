@@ -9,18 +9,6 @@ const ItemDetailContainer = () => {
 
   const { id } = useParams();
 
-  // useEffect(() => {
-  //   const getData = new Promise((resolve, reject) => {
-  //     setTimeout(() => {
-  //       resolve(data);
-  //     }, 2000);
-  //   });
-  //   getData.then((res) => {
-  //     const findById = res.find((el) => el.id == id);
-  //     setItem(findById);
-  //   });
-  // }, [id]);
-
   useEffect(() => {
     const db = getFirestore(),
       refDoc = doc(db, "items", id);

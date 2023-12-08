@@ -16,10 +16,25 @@ const CartProvider = ({ children }) => {
     [buyers, setBuyers] = useState(initialBuyers),
     [cartNumber, setCartNumber] = useState(0);
 
-  const handleItem = (item) => {
-    setItems((prev) => {
-      return [...prev, item];
-    });
+  const handleItem = (item, newCount) => {
+    if (items.some((el) => el.id === item.id)) {
+      const updateValue = items.map((i) => {
+        if (i.id === item.id) {
+          return {
+            ...i,
+            count: i.count + newCount,
+            totalPrice: i.totalPrice + i.price * newCount,
+          };
+        } else {
+          return i;
+        }
+      });
+      setItems(updateValue);
+    } else {
+      setItems((prev) => {
+        return [...prev, item];
+      });
+    }
   };
 
   const handleBuyer = (e) => {
@@ -31,7 +46,13 @@ const CartProvider = ({ children }) => {
     });
   };
 
-  const handleCartNumber = () => setCartNumber(cartNumber + 1);
+  const handleCartNumber = (id) => {
+    if (items.some((item) => item.id === id)) {
+      setCartNumber(cartNumber);
+    } else {
+      setCartNumber(cartNumber + 1);
+    }
+  };
 
   const clearAll = () => {
     setItems([]);
@@ -47,7 +68,7 @@ const CartProvider = ({ children }) => {
   const finalPrice = (items) => {
     let total = 0;
     items.forEach((item) => {
-      total = total + Number(item.price);
+      total = total + Number(item.totalPrice);
     });
     return total;
   };
@@ -63,14 +84,11 @@ const CartProvider = ({ children }) => {
 
     const ordersCollection = collection(db, "orders");
 
-    addDoc(ordersCollection, order).then(({ id }) => {
-      if (id) {
-        clearAll();
-        alert();
-        setBuyers(initialBuyers);
-      } else {
-        ("Ocurrio un error");
-      }
+    addDoc(ordersCollection, order).then(() => {
+      console.log("Funcionó");
+      alert("Tu orden ha sido exitosa");
+      clearAll();
+      setBuyers(initialBuyers);
     });
   };
 

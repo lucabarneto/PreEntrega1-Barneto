@@ -259,10 +259,6 @@ section {
   cursor: pointer;
 }
 
-.item-details__buttons > div {
-  text-align: center;
-}
-
 .item-details__buttons > div > div {
   margin-bottom: 8px;
 }

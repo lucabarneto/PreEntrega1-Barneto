@@ -1,7 +1,4 @@
 import ItemCount from "./ItemCount";
-import { NavLink } from "react-router-dom";
-import { CartContext } from "../contexts/CartContext";
-import { useContext } from "react";
 
 const ItemDetails = ({
   id,
@@ -11,9 +8,7 @@ const ItemDetails = ({
   price,
   quantity,
 }) => {
-  const { handleItem, handleCartNumber } = useContext(CartContext);
-
-  const item = {
+  const incompleteItem = {
     title,
     price,
     quantity,
@@ -47,17 +42,9 @@ const ItemDetails = ({
           </div>
           <div className="item-details__buttons">
             <div>
-              <ItemCount top={quantity} />
+              <ItemCount top={quantity} item={incompleteItem} />
               <span>{quantity} cuadros disponibles</span>
             </div>
-            <button
-              onClick={() => {
-                handleItem(item);
-                handleCartNumber();
-              }}
-            >
-              Agregar al carrito
-            </button>
           </div>
         </div>
       </article>
@@ -66,5 +53,3 @@ const ItemDetails = ({
 };
 
 export default ItemDetails;
-
-//d3ugyf2ht6aenh.cloudfront.net/stores/829/376/products/vinilo-3d-infantiles-spider-man1-9e660ff52f8e3daba115503601575193-1024-1024.webp
