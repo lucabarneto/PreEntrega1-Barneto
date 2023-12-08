@@ -1,8 +1,27 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Proyecto React Coderhouse Luca Barneto
 
-Currently, two official plugins are available:
+Buenas! El siguiente proyecto se llama "Quarter Shop" y es básicamente una tienda online de cuadros. Posee distintas categorías de cuadros, desde las cuales podrás acceder a estos y agregar cuantos quieras al carrito. Para completar la compra tendrás que llenar un formulario con tus datos (FALSOS).
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+
+## Reconocimientos
+En el proyecto se utilizaron varias imágenes de un ecommerce de cuadros real: DeCuadros. Dejo el link de la tienda abajo
+
+ - [Página de DeCuadros](https://www.decuadrostienda.com/)
+
+
+
+
+
+
+## Cómo usar mi proyecto
+
+Create React App
+```bash
+  npm start
+```
+Vite
+```bash
+  npm install (crea la app de React)
+  npm run dev
+```

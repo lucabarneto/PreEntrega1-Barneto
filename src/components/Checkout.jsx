@@ -10,7 +10,6 @@ const Checkout = () => {
         type="text"
         name="nombre"
         value={buyers.nombre}
-        id="checkout-name"
         placeholder="Nombre"
         required
         onChange={handleBuyer}
@@ -19,7 +18,6 @@ const Checkout = () => {
         type="tel"
         name="telefono"
         value={buyers.telefono}
-        id="checkout-tel"
         placeholder="Télefono"
         required
         onChange={handleBuyer}
@@ -28,7 +26,6 @@ const Checkout = () => {
         type="email"
         name="email"
         value={buyers.email}
-        id="checkout-email"
         placeholder="Email"
         required
         onChange={handleBuyer}
