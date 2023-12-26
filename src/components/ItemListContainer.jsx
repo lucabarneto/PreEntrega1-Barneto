@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import ItemList from "./ItemList";
 import { useParams } from "react-router-dom";
 import {
   getFirestore,
@@ -8,8 +7,9 @@ import {
   query,
   where,
 } from "firebase/firestore";
+import ItemList from "./ItemList";
 
-export const ItemListContainer = () => {
+const ItemListContainer = () => {
   const [items, setItems] = useState([]);
 
   const { id } = useParams();
@@ -39,3 +39,5 @@ export const ItemListContainer = () => {
     </section>
   );
 };
+
+export default ItemListContainer;

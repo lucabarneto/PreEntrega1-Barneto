@@ -24,7 +24,7 @@ const ItemCount = ({ top, item }) => {
         <button
           onClick={() => {
             handleItem(completeItem, count);
-            handleCartNumber(item.id);
+            handleCartNumber(completeItem.count);
           }}
         >
           Agregar al carrito

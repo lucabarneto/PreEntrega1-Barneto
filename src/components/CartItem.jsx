@@ -15,7 +15,7 @@ const CartItem = ({ pictureUrl, description, title, price, id, count }) => {
           <div className="cart-item-price">${price}</div>
         </div>
       </div>
-      <button onClick={() => removeItem(id)}>Eliminar</button>
+      <button onClick={() => removeItem(id, count)}>Eliminar</button>
     </article>
   );
 };

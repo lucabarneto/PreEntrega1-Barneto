@@ -11,7 +11,6 @@ const initialBuyers = {
 };
 
 const CartProvider = ({ children }) => {
-  // const { items, setItems } = useState([]);
   const [items, setItems] = useState([]),
     [buyers, setBuyers] = useState(initialBuyers),
     [cartNumber, setCartNumber] = useState(0);
@@ -46,12 +45,8 @@ const CartProvider = ({ children }) => {
     });
   };
 
-  const handleCartNumber = (id) => {
-    if (items.some((item) => item.id === id)) {
-      setCartNumber(cartNumber);
-    } else {
-      setCartNumber(cartNumber + 1);
-    }
+  const handleCartNumber = (count) => {
+    setCartNumber(cartNumber + count);
   };
 
   const clearAll = () => {
@@ -59,10 +54,10 @@ const CartProvider = ({ children }) => {
     setCartNumber(0);
   };
 
-  const removeItem = (id) => {
+  const removeItem = (id, count) => {
     let filterById = items.filter((item) => item.id !== id);
     setItems(filterById);
-    setCartNumber(cartNumber - 1);
+    setCartNumber(cartNumber - count);
   };
 
   const finalPrice = (items) => {
@@ -73,12 +68,16 @@ const CartProvider = ({ children }) => {
     return total;
   };
 
-  const confirmPurchase = () => {
+  const confirmPurchase = (e) => {
+    e.preventDefault();
+
     const order = {
       buyers,
       items,
       total: finalPrice(items),
     };
+
+    console.log(order);
 
     const db = getFirestore();
 
@@ -87,8 +86,8 @@ const CartProvider = ({ children }) => {
     addDoc(ordersCollection, order).then(() => {
       console.log("Funcionó");
       alert("Tu orden ha sido exitosa");
-      clearAll();
       setBuyers(initialBuyers);
+      clearAll();
     });
   };
 

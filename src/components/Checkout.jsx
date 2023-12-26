@@ -5,7 +5,7 @@ const Checkout = () => {
   const { confirmPurchase, buyers, handleBuyer } = useContext(CartContext);
 
   return (
-    <form>
+    <form onSubmit={confirmPurchase}>
       <input
         type="text"
         name="nombre"
@@ -30,7 +30,7 @@ const Checkout = () => {
         required
         onChange={handleBuyer}
       />
-      <button onClick={confirmPurchase}>Realizar compra</button>
+      <input className="submit" type="submit" value="Comprar" />
     </form>
   );
 };

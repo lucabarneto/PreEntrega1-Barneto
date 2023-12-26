@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-export const CartWidget = ({ number }) => {
+const CartWidget = ({ number }) => {
   return (
     <div className="cart-container">
       <Link to={"/cart"}>
@@ -10,3 +10,5 @@ export const CartWidget = ({ number }) => {
     </div>
   );
 };
+
+export default CartWidget;

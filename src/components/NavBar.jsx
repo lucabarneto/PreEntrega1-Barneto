@@ -1,9 +1,9 @@
-import { CartWidget } from "./CartWidget";
 import { NavLink } from "react-router-dom";
 import { useContext } from "react";
 import { CartContext } from "../contexts/CartContext";
+import CartWidget from "./CartWidget";
 
-export const NavBar = () => {
+const NavBar = () => {
   const { cartNumber } = useContext(CartContext);
   return (
     <nav className="navbar">
@@ -23,3 +23,5 @@ export const NavBar = () => {
     </nav>
   );
 };
+
+export default NavBar;
